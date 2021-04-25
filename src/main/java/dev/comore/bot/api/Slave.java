@@ -1,6 +1,7 @@
 package dev.comore.bot.api;
 
 import dev.comore.bot.api.scenario.ScenarioBuilder;
+import dev.comore.bot.api.task.execution.TaskExecutor;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -42,4 +43,10 @@ public interface Slave extends Remote {
      * @throws RemoteException when the RMI connection isn't established.
      */
     ScenarioBuilder createScenario() throws RemoteException;
+
+    /**
+     * Returns the task executor.
+     * @return the task executor.
+     */
+    TaskExecutor getTaskExecutor();
 }
